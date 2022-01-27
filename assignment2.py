@@ -2,7 +2,7 @@ from datetime import date
 
 import socket 
 class Assignment2: 
-    
+    year : int
     def __init__(self, year):
         self.year = year
     
@@ -26,7 +26,9 @@ class Assignment2:
     @staticmethod
     def checkGoodString(string: str) -> bool: 
         is_good_len = len(string) >= 9
-        is_good_start_char = string[0] in range(ord('a'), ord('z'))
+        a: int = ord(a)
+        z: int = ord(z)
+        is_good_start_char = string[0] in range(a, z)
         contains_only_one_numer = False
         for character in string:
             if character.isdigit() and not contains_only_one_numer:
@@ -37,7 +39,7 @@ class Assignment2:
         return (is_good_len and is_good_start_char and contains_only_one_numer)
     
     @staticmethod
-    def connectTo(host: str, port: int ) -> bool :
+    def connectTcp(host: str, port: int ) -> bool :
         HOST = "127.0.0.1"
         PORT = 65432
         
