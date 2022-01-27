@@ -9,9 +9,9 @@ class Assignment2:
         print(f"Your age is {currentYear - self.year}")
     
     def listAnniversaries(self) -> list: 
-        num_aniversaries = (self.year - 2022) // 10
+        num_aniversaries = (date.today().year - self.year ) // 10
         aniversaries = []
-        for x in range(1,num_aniversaries):
+        for x in range(1,num_aniversaries + 1):
             aniversaries.append((x * 10))
         return aniversaries
     
@@ -54,8 +54,9 @@ class Assignment2:
                 return False
             
 if __name__ == "__main__":
-    a = Assignment2(1997)
-    a.tellAge(2022)
+    a = Assignment2(2000)
+    ret = a.listAnniversaries()
+    print(ret)
     ret = Assignment2.checkGoodString("f1obar0more")
     print(ret)
     ret = Assignment2.checkGoodString("foobar0more")
