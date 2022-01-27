@@ -4,20 +4,20 @@ import socket
 class Assignment2: 
     
     def __init__(self, year):
-        self.birthYear = year
+        self.year = year
     
     def tellAge(self, year):
-        print(f"Your age is {self.birthYear - year}")
+        print(f"Your age is {self.year - year}")
     
     def listAnniversaries(self) -> list: 
-        num_aniversaries = (self.birthYear - date.today().year) // 10
+        num_aniversaries = (self.year - date.today().year) // 10
         aniversaries = []
         for x in range(1,num_aniversaries):
             aniversaries.append((x * 10))
         return aniversaries
     
     def modifyYear(self, n) -> str:
-        string_ver = f'{self.birthYear}'[0:2] * n
+        string_ver = f'{self.year}'[0:2] * n
         odd_chars = ""
         for x in range(0, n, step=2):
             odd_chars = odd_chars + self.birthYear[x]
@@ -37,7 +37,7 @@ class Assignment2:
         return (is_good_len and is_good_start_char and contains_only_one_numer)
     
     @staticmethod
-    def connectTo(url: str, port: int ) -> bool :
+    def connectTo(host: str, port: int ) -> bool :
         HOST = "127.0.0.1"
         PORT = 65432
         
