@@ -6,7 +6,7 @@ class Assignment2:
         self.year = year
     
     def tellAge(self, currentYear: int):
-        print(f"Your age is {self.year - currentYear}")
+        print(f"Your age is  {currentYear - self.year}")
     
     def listAnniversaries(self) -> list: 
         num_aniversaries = (self.year - 2022) // 10
@@ -54,6 +54,8 @@ class Assignment2:
                 return False
             
 if __name__ == "__main__":
+    a = Assignment2(1997)
+    a.tellAge(2022)
     ret = Assignment2.checkGoodString("f1obar0more")
     print(ret)
     ret = Assignment2.checkGoodString("foobar0more")
