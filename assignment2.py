@@ -6,11 +6,11 @@ class Assignment2:
     def __init__(self, year):
         self.year = year
     
-    def tellAge(self, year):
-        print(f"Your age is {self.year - year}")
+    def tellAge(self, currentYear: int):
+        print(f"Your age is {self.year - currentYear}")
     
     def listAnniversaries(self) -> list: 
-        num_aniversaries = (self.year - date.today().year) // 10
+        num_aniversaries = (self.year - 2022) // 10
         aniversaries = []
         for x in range(1,num_aniversaries):
             aniversaries.append((x * 10))
