@@ -3,8 +3,8 @@ from datetime import date
 import socket 
 class Assignment2: 
     
-    def __init__(self, birthYear):
-        self.birthYear = birthYear
+    def __init__(self, year):
+        self.birthYear = year
     
     def tellAge(self, year):
         print(f"Your age is {self.birthYear - year}")
@@ -16,7 +16,7 @@ class Assignment2:
             aniversaries.append((x * 10))
         return aniversaries
     
-    def modifyYear(self, number) -> str:
+    def modifyYear(self, n) -> str:
         string_ver = f'{self.birthYear}'[0:2] * n
         odd_chars = ""
         for x in range(0, n, step=2):
@@ -46,6 +46,8 @@ class Assignment2:
             s.connect((host_ip, port))
             try:
                 s.send("test")
+                s.close()
                 return True
             except:
+                s.close()
                 return False
