@@ -26,8 +26,8 @@ class Assignment2:
     @staticmethod
     def checkGoodString(string: str) -> bool: 
         is_good_len = len(string) >= 9
-        a: int = ord(a)
-        z: int = ord(z)
+        a: int = ord('a')
+        z: int = ord('z')
         is_good_start_char = string[0] in range(a, z)
         contains_only_one_numer = False
         for character in string:
@@ -44,7 +44,7 @@ class Assignment2:
         PORT = 65432
         
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            host_ip = socket.gethostbyname(url)
+            host_ip = socket.gethostbyname(host)
             s.connect((host_ip, port))
             try:
                 s.send("test")
