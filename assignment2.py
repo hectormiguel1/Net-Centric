@@ -2,7 +2,6 @@ from datetime import date
 
 import socket 
 class Assignment2: 
-    year : int
     def __init__(self, year):
         self.year = year
     
@@ -28,12 +27,12 @@ class Assignment2:
         is_good_len = len(string) >= 9
         a: int = ord('a')
         z: int = ord('z')
-        is_good_start_char = string[0] in range(a, z)
+        is_good_start_char = ord(string[0]) <= z and ord(string[0]) >= a
         contains_only_one_numer = False
         for character in string:
             if character.isdigit() and not contains_only_one_numer:
                 contains_only_one_numer = True
-            if character.isdigit() and contains_only_one_numer:
+            elif character.isdigit() and contains_only_one_numer:
                 contains_only_one_numer = False
                 break
         return (is_good_len and is_good_start_char and contains_only_one_numer)
@@ -53,3 +52,9 @@ class Assignment2:
             except:
                 s.close()
                 return False
+            
+if __name__ == "__main__":
+    ret = Assignment2.checkGoodString("f1obar0more")
+    print(ret)
+    ret = Assignment2.checkGoodString("foobar0more")
+    print(ret)
