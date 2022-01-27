@@ -44,9 +44,8 @@ class Assignment2:
         
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             host_ip = socket.gethostbyname(host)
-            s.connect((host_ip, port))
             try:
-                s.send("test")
+                s.connect((host_ip, port))
                 s.close()
                 return True
             except:
@@ -61,3 +60,5 @@ if __name__ == "__main__":
     print(ret)
     ret = Assignment2.checkGoodString("foobar0more")
     print(ret)
+    retval = Assignment2.connectTcp("www.google.com", 80)
+    print(retval)
