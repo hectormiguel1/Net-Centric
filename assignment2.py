@@ -15,11 +15,15 @@ class Assignment2:
             aniversaries.append((x * 10))
         return aniversaries
     
-    def modifyYear(self, n) -> str:
-        string_ver = f'{self.year}'[0:2] * n
+    def modifyYear(self, n: int) -> str:
+        str_year = f'{self.year}'
+        string_ver = str_year[0:2] * n
         odd_chars = ""
-        for x in range(0, n, step=2):
-            odd_chars = odd_chars + self.birthYear[x]
+        for x in range(0, n, 2):
+            try:
+                odd_chars = odd_chars + str_year[x]
+            except:
+                break
         return string_ver + odd_chars
     
     @staticmethod
@@ -54,7 +58,7 @@ class Assignment2:
             
 if __name__ == "__main__":
     a = Assignment2(2000)
-    ret = a.listAnniversaries()
+    ret = a.modifyYear(5)
     print(ret)
     ret = Assignment2.checkGoodString("f1obar0more")
     print(ret)
