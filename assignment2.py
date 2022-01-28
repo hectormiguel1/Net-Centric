@@ -19,6 +19,7 @@ class Assignment2:
         str_year = f'{self.year}'
         string_ver = str_year[0:2] * n
         odd_chars = ""
+        str_year = f'{self.year * n}'
         for x in range(0, n, 2):
             try:
                 odd_chars = odd_chars + str_year[x]
@@ -57,8 +58,8 @@ class Assignment2:
                 return False
             
 if __name__ == "__main__":
-    a = Assignment2(2000)
-    ret = a.modifyYear(5)
+    a = Assignment2(1782)
+    ret = a.modifyYear(3)
     print(ret)
     ret = Assignment2.checkGoodString("f1obar0more")
     print(ret)
